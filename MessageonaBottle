@@ -13,11 +13,11 @@ int main() {
     while (1) {
 
         input = fgetc(text);
-        if (!(input == 49 || input == 48 || input == 32 || input == 10 || input == EOF)) {
+        if (!(input == 49 || input == 48 || input == 32 || input == 10 || input == 13 ||input == EOF)) {
             break;
         }
 
-        if (!(input == 32 || input == 13 || input == 10)) {
+        if (!(input == 32 || input == 10 || input == 13 || input == EOF)) {
             binchar[n] = input - 48;
             n++;
         }
@@ -32,8 +32,12 @@ int main() {
             n = 0;
         }
         if (input == EOF) {
-            printf("\nPress Button to Exit");
-            scanf("%d", &output);
+            if(n!=0){
+                printf("\nEs sind noch folgende Zahlen uebrig:");
+                for(int x = 0; x <= n;x++){
+                    printf("%d",binchar[x]);
+                }
+            }
             break;
         }
     }
