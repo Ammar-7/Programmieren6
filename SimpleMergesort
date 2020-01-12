@@ -9,7 +9,7 @@ void simple_mergesort(int *array, int from, int to) {
     }
     int m = (to + from) / 2;
     simple_mergesort(array, from, m);
-    simple_mergesort(array, m + 1, from);
+    simple_mergesort(array, m + 1, to);
 
     int *temp = malloc((to-from)*sizeof(int));
     int i = from, j = m + 1, k = 0;
